@@ -1,5 +1,5 @@
 createdAt: "2019-10-17T08:50:26.271Z"
-updatedAt: "2019-10-17T09:28:32.575Z"
+updatedAt: "2019-10-17T09:39:48.875Z"
 type: "MARKDOWN_NOTE"
 folder: "5072df3bbcbc42cf9873"
 title: "Http Request"
@@ -45,6 +45,29 @@ content: '''
           }
       }
       task.resume()
+    ```
+  - Example (with Error Handling)
+      ```
+       let s = "http://www.someserver.com/somefolder/someimage.jpg"
+      let url = NSURL(string:s)!
+      let session = NSURLSession.sharedSession()
+      let task = session.downloadTaskWithURL(url) {
+          (loc:NSURL?, response:NSURLResponse?, error:NSError?) in
+          if error != nil {
+              print(error)
+          return }
+          let status = (response as! NSHTTPURLResponse).statusCode
+          if status != 200 {
+              print("response status: \\(status)")
+          return }
+          let d = NSData(contentsOfURL:loc!)!
+          let im = UIImage(data:d)
+          dispatch_async(dispatch_get_main_queue()) {
+              self.iv.image = im
+          }
+      }
+      task.resume()
+  
       ```
 '''
 linesHighlighted: []

@@ -1,0 +1,25 @@
+createdAt: "2019-10-17T08:50:26.271Z"
+updatedAt: "2019-10-17T09:05:41.426Z"
+type: "MARKDOWN_NOTE"
+folder: "5072df3bbcbc42cf9873"
+title: "Http Request"
+tags: []
+content: '''
+  # Http Request 
+  - http request is made through **NSURLSession** object.
+  - **NSURLSession** object has **NSURLSessionTask** object which performs and represents one `download` or `upload` task
+  - **NSURLSessionTask** has various properties such as 
+        1. `taskDescription` and `taskIdentifier`.
+        2. `originalRequest` and `currentRequest`
+        3. initial response from server
+        4. countOfBytes
+        5. `state` (.Running,. Susspended, .Canceling, .Completed)
+        6. `error` if task is failed.
+  - We can tell a task to `resume`, `suspend`, or `cancel`.
+  - `task` is born `suspended` and won't start until we `resume` it.
+  - 
+            
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

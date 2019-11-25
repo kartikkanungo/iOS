@@ -4,12 +4,12 @@ IOS documentation
   - http request is made through **NSURLSession** object.
   - **NSURLSession** object has **NSURLSessionTask** object which performs and represents one `download` or `upload` task
   - **NSURLSessionTask** has various properties such as 
-        1. `taskDescription` and `taskIdentifier`.
-        2. `originalRequest` and `currentRequest`
-        3. initial response from server
-        4. countOfBytes
-        5. `state` (.Running,. Susspended, .Canceling, .Completed)
-        6. `error` if task is failed.
+    1. `taskDescription` and `taskIdentifier`.
+    2. `originalRequest` and `currentRequest`
+    3. initial response from server
+    4. countOfBytes
+    5. `state` (.Running,. Susspended, .Canceling, .Completed)
+    6. `error` if task is failed.
   - We can tell a task to `resume`, `suspend`, or `cancel`.
   - `task` is born `suspended` and won't start until we `resume` it.
   -  can change **NSURLSessionTask's** priority in `0 and 1` and it also provides three constants properties such as 
